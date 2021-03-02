@@ -1,9 +1,18 @@
 import { setCookie } from 'nookies';
 import { ChangeEvent, useState } from 'react';
+import { useRouter } from 'next/dist/client/router';
 import { Select } from './select';
+import { i18n } from '../../next-i18next.config';
+
+const { locales } = i18n;
+
+const getOptions = (values: string[]) =>
+  values.map((value) => <option value={value}>{value}</option>);
 
 export const LanguageSelect = () => {
-  const [currentValue, setCurrentValue] = useState(`fr`);
+  const { locale } = useRouter();
+  const [currentValue, setCurrentValue] = useState(locale);
+
   const handleChange = ({
     target: { value },
   }: ChangeEvent<HTMLSelectElement>) => {
@@ -13,9 +22,7 @@ export const LanguageSelect = () => {
 
   return (
     <Select value={currentValue} onChange={handleChange}>
-      <option value="en-US">en-US</option>
-      <option value="fr">fr</option>
-      <option value="zh-Hans">zh-Hans</option>
+      {getOptions(locales)}
     </Select>
   );
 };
