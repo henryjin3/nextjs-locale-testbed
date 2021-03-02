@@ -1,3 +1,5 @@
 {
-  "test": "Texte de test"
+  "test": "Texte de test",
+  "setCookie": "Définir le cookie",
+  "thisIsHome": "Ceci est la page d'accueil."
 }

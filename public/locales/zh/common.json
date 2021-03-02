@@ -1,3 +1,5 @@
 {
-  "test": "测试文字"
+  "test": "测试文字",
+  "setCookie": "设置Cookie",
+  "thisIsHome": "这是主页。"
 }

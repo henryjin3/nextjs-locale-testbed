@@ -1,3 +1,5 @@
 {
-  "test": "Test text"
+  "test": "Test text",
+  "setCookie": "Set Cookie",
+  "thisIsHome": "This is the home page."
 }
