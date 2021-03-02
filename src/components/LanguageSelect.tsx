@@ -18,6 +18,7 @@ export const LanguageSelect = () => {
   }: ChangeEvent<HTMLSelectElement>) => {
     setCurrentValue(value);
     setCookie(null, `NEXT_LOCALE`, value);
+    window.location.assign(`http://localhost:3000/`);
   };
 
   return (
