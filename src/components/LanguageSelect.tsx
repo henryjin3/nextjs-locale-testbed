@@ -1,15 +1,14 @@
+import { setCookie } from 'nookies';
 import { ChangeEvent, useState } from 'react';
 import { Select } from './select';
 
-export const LanguageSelect = ({
-  onChange,
-}: {
-  onChange?: (newValue: string) => void;
-}) => {
+export const LanguageSelect = () => {
   const [currentValue, setCurrentValue] = useState(`fr`);
-  const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    setCurrentValue(e.target.value);
-    onChange?.(e.target.value);
+  const handleChange = ({
+    target: { value },
+  }: ChangeEvent<HTMLSelectElement>) => {
+    setCurrentValue(value);
+    setCookie(null, `NEXT_LOCALE`, value);
   };
 
   return (
